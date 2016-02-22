@@ -15,13 +15,14 @@ router.use(function timeLog(req, res, next) {
 
 // middleware routes
 
-router.get('/:id', function (req, res) {
-  var id = req.params.id;
-  res.send('getting score with id ' + id);
+router.get('/', function (req, res) {
+  res.send('GET score');
 });
 
 router.post('/', function (req, res) {
-  res.send('POST score');
+  var score = req.body.score;
+  console.log('score: ' + score);
+  res.send('POST score ' + score);
 });
 
 router.put('/', function (req, res) {

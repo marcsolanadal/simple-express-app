@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon server.js localhost 3000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -11,5 +12,9 @@
   "dependencies": {
     "body-parser": "^1.15.0",
     "express": "^4.13.4"
+  },
+  "devDependencies": {
+    "gulp-nodemon": "^2.0.6",
+    "nodemon": "^1.9.0"
   }
 }

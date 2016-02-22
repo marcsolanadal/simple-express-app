@@ -7,14 +7,16 @@ router.use(function timeLog(req, res, next) {
 });
 
 // POST /login gets urlencoded bodies
-router.post('/login', urlencodedParser, function (req, res) {
-  if (!req.body) return res.sendStatus(400);
-  if (req.body.pass === '1234') {
-    console.log(req.body);
-    res.send('welcome, ' + req.body.user);
-  } else {
-    res.sendStatus(500);
-  }
+router.post('/login', function (req, res) {
+//  if (!req.body) return res.sendStatus(400);
+//  console.log(req.body);
+  //if (req.body.pass === '1234') {
+  //  console.log(req.body);
+  //  res.send('welcome, ' + req.body.user);
+  //} else {
+  //  res.sendStatus(500);
+  //}
+
 });
 
 module.exports = router;
