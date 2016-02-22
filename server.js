@@ -1,10 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 
-var login = require('./routes/login');
-var scores = require('./routes/scores');
-var decisions = require('./routes/decisions');
-
 var app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -17,9 +13,9 @@ app.use(function (req, res, next) {
 });
 
 // Routes
-app.use('/login', login);
-app.use('/scores', scores);
-app.use('/decisions', decisions);
+app.use('/login', require('./routes/login'));
+app.use('/scores', require('./routes/scores'));
+app.use('/decisions', require('./routes/decisions'));
 
 // Server configuration
 app.listen(3000, function () {
