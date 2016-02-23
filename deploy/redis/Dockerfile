@@ -1,0 +1,6 @@
+FROM redis:alpine
+
+COPY redis.conf /usr/local/etc/redis/redis.conf
+
+EXPOSE 7777
+CMD [ "redis-server", "/usr/local/etc/redis/redis.conf" ]
