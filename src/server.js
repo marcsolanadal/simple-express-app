@@ -12,6 +12,8 @@ app.use(function (req, res, next) {
   next();
 });
 
+// Redis connection
+
 // Routes
 app.use('/login', require('./routes/login'));
 app.use('/scores', require('./routes/scores'));
