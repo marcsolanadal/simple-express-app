@@ -19,11 +19,12 @@ router.get('/', function (req, res) {
   });
 });
 
+// TODO: Get the username from the login
 router.post('/', function (req, res) {
-  //rcli.zadd(user, function(err, data) {
-  var score = req.body.score;
-  rcli.set('score', score);
-  res.send('POST score ' + score);
+  rcli.zadd(['scores', req.body.score, req.body.name], function(err, data) {
+    console.log('added ' + data + ' item');
+    res.send('added ' + data + ' item');
+  });
 });
 
 router.put('/', function (req, res) {
